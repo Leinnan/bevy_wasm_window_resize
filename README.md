@@ -13,7 +13,7 @@ cargo add bevy_wasm_window_resize
 
 # Usage
 
-Just add `WindowResizePlugin`during app creation process.
+Just add `WindowResizePlugin` during app creation process.
 
 ```rust
 use bevy::prelude::*;
