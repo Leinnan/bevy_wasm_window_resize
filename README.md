@@ -28,6 +28,6 @@ fn main() {
 ```
 
 # Bevy compatibility table
-Bevy version | bevy_window_title_diagnostics version
+Bevy version | crate version
 --- | ---
 0.10 | 0.1
