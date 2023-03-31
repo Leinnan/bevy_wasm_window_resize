@@ -6,8 +6,9 @@ repository = "https://github.com/Leinnan/bevy_wasm_window_resize"
 homepage = "https://github.com/Stazis555/bevy_wasm_window_resize"
 readme = "README.md"
 license = "MIT"
-keywords = ["bevy", "diagnostic", "game", "log", "fps"]
+keywords = ["bevy", "wasm", "web", "game"]
 categories  = ["game-engines"]
+description = "Bevy helper crate that makes application canvas match window size."
 
 [dependencies]
 bevy = "0.10.0"

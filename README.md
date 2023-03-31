@@ -1,7 +1,8 @@
 # Bevy WASM window resize
 
 This crate makes [Bevy](https://github.com/bevyengine/bevy) application canvas match window size.
-Original idea and code behind is made by: [ManevilleF](https://github.com/ManevilleF)
+
+Original idea and code behind: [ManevilleF](https://github.com/ManevilleF)
 
 # Install
 
