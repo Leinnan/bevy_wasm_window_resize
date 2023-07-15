@@ -22,7 +22,7 @@ use bevy_wasm_window_resize::WindowResizePlugin;
 fn main() {
     App::new()
         .add_plugins(DefaultPlugins)
-        .add_plugin(WindowResizePlugin)
+        .add_plugins(WindowResizePlugin)
         .run();
 }
 ```
@@ -31,3 +31,4 @@ fn main() {
 Bevy version | crate version
 --- | ---
 0.10 | 0.1.0
+0.11 | 0.2.0

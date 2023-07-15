@@ -5,7 +5,9 @@ pub struct WindowResizePlugin;
 impl Plugin for WindowResizePlugin {
     #[cfg(target_arch = "wasm32")]
     fn build(&self, app: &mut App) {
-        app.add_system(handle_browser_resize);
+        use bevy::prelude::Update;
+
+        app.add_systems(Update, handle_browser_resize);
     }
 
     #[cfg(not(target_arch = "wasm32"))]
