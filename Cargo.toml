@@ -1,6 +1,6 @@
 [package]
 name = "bevy_wasm_window_resize"
-version = "0.1.1"
+version = "0.2.0"
 edition = "2021"
 repository = "https://github.com/Leinnan/bevy_wasm_window_resize"
 homepage = "https://github.com/Leinnan/bevy_wasm_window_resize"
@@ -10,8 +10,8 @@ keywords = ["bevy", "wasm", "web", "game"]
 categories  = ["game-engines"]
 description = "Bevy helper crate that makes application canvas match window size."
 
-[dependencies]
-bevy = "0.10.0"
+[dependencies.bevy]
+version = "0.12"
 
 [target.'cfg(target_arch = "wasm32")'.dependencies]
-web-sys = "0.3.61"
+web-sys = "0.3"
