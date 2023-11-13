@@ -1,5 +1,9 @@
 # Bevy WASM window resize
 
+[![crates.io](https://img.shields.io/crates/v/bevy_wasm_window_resize.svg)](https://crates.io/crates/bevy_wasm_window_resize)
+[![license](https://img.shields.io/crates/l/bevy_wasm_window_resize)](https://github.com/Leinnan/bevy_wasm_window_resize#license)
+[![crates.io](https://img.shields.io/crates/d/bevy_wasm_window_resize.svg)](https://crates.io/crates/bevy_wasm_window_resize)
+
 This crate makes [Bevy](https://github.com/bevyengine/bevy) application canvas match window size.
 
 Original idea and code behind: [ManevilleF](https://github.com/ManevilleF)
