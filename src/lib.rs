@@ -1,4 +1,4 @@
-use bevy::prelude::{App, Plugin, Update};
+use bevy::prelude::*;
 
 pub struct WindowResizePlugin;
 
