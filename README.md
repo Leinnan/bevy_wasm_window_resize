@@ -34,5 +34,5 @@ fn main() {
 # Bevy compatibility table
 Bevy version | crate version
 --- | ---
-0.12 | 0.2.0
-0.10 | 0.1.0
+0.12 | 0.2
+0.10 | 0.1

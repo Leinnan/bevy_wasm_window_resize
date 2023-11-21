@@ -1,6 +1,6 @@
 [package]
 name = "bevy_wasm_window_resize"
-version = "0.2.0"
+version = "0.2.1"
 edition = "2021"
 repository = "https://github.com/Leinnan/bevy_wasm_window_resize"
 homepage = "https://github.com/Leinnan/bevy_wasm_window_resize"
