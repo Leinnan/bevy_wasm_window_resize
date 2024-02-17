@@ -19,15 +19,28 @@ fn handle_browser_resize(
         bevy::ecs::query::With<bevy::window::PrimaryWindow>,
     >,
 ) {
+    let Some(wasm_window) = web_sys::window() else {
+        return;
+    };
+    let Ok(inner_width) = wasm_window.inner_width() else {
+        return;
+    };
+    let Ok(inner_height) = wasm_window.inner_height() else {
+        return;
+    };
+    let Some(target_width) = inner_width.as_f64() else {
+        return;
+    };
+    let Some(target_height) = inner_height.as_f64() else {
+        return;
+    };
     for mut window in &mut primary_query {
-        let wasm_window = web_sys::window().unwrap();
-        let (target_width, target_height) = (
-            wasm_window.inner_width().unwrap().as_f64().unwrap() as f32,
-            wasm_window.inner_height().unwrap().as_f64().unwrap() as f32,
-        );
-        if window.resolution.width() != target_width || window.resolution.height() != target_height
+        if window.resolution.width() != (target_width as f32)
+            || window.resolution.height() != (target_height as f32)
         {
-            window.resolution.set(target_width, target_height);
+            window
+                .resolution
+                .set(target_width as f32, target_height as f32);
         }
     }
 }
