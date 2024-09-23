@@ -7,11 +7,14 @@ homepage = "https://github.com/Leinnan/bevy_wasm_window_resize"
 readme = "README.md"
 license = "MIT"
 keywords = ["bevy", "wasm", "web", "game"]
-categories  = ["game-engines"]
+categories = ["game-engines"]
 description = "Bevy helper crate that makes application canvas match window size."
 
 [dependencies.bevy]
-version = "0.14"
+# version = "0.15"
+git = "https://github.com/bevyengine/bevy.git"
+rev = "9386bd0"
+
 default-features = false
 features = ["bevy_winit"]
 
