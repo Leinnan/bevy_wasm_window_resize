@@ -13,7 +13,7 @@ description = "Bevy helper crate that makes application canvas match window size
 [dependencies.bevy]
 # version = "0.15"
 git = "https://github.com/bevyengine/bevy.git"
-rev = "9386bd0"
+rev = "9386bd0114c44c9f00a2e9c41db1225aaa78d159"
 
 default-features = false
 features = ["bevy_winit"]
