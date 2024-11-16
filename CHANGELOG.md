@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## [0.5.0]
+
+- Update to Bevy 0.15
+
+## [0.4.0]
+
+- Update to Bevy 0.14
+
 ## [0.3.0]
 
 - Update to Bevy 0.13
