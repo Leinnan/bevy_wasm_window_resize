@@ -24,7 +24,7 @@ jobs:
       cancel-in-progress: true
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/cache@v3
+      - uses: actions/cache@v4
         with:
           path: |
             ~/.cargo/bin/
@@ -35,29 +35,18 @@ jobs:
           key: ${{ github.ref || github.run_id }}
       - uses: dtolnay/rust-toolchain@stable
         with:
-          targets: wasm32-unknown-unknown
+          toolchain: stable
+          components: clippy,rustfmt
       - name: Install alsa and udev
         run: sudo apt-get install --no-install-recommends libasound2-dev libudev-dev
-      - name: Install wasm bindgen
-        uses: taiki-e/cache-cargo-install-action@v2
-        with:
-          tool: wasm-bindgen-cli
       - name: Get the release version from the input
         id: version_dispatch
         shell: bash
         if: ${{ github.event_name == 'workflow_dispatch' }}
         run: |
           if [ -n "${{ inputs.override_bevy_version }}" ]; then cargo add bevy@${{ inputs.override_bevy_version }} --no-default-features --features ["bevy_winit"];
-      - name: Build
-        run: cargo build --release --target wasm32-unknown-unknown --example simple && wasm-bindgen --out-dir ./out/ --target web ./target/wasm32-unknown-unknown/release/examples/simple.wasm  
-      - name: Copy
-        run: cp index.html out/index.html && ls -R out
-      - name: Push
-        uses: s0/git-publish-subdir-action@develop
-        env:
-          SQUASH_HISTORY: true
-          REPO: self
-          BRANCH: gh-pages # The branch name where you want to push the assets
-          FOLDER: out # The directory where your assets are generated
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub will automatically add this - you don't need to bother getting a token
-          MESSAGE: "Build: ({sha}) {msg}" # The commit message
+
+      - name: Format and Clippy
+        run: |
+          cargo fmt --all -- --check
+          cargo clippy -- -D warnings
